@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MOONPEPE - The Next Moon Mission 🚀</title>
+    <meta name="description" content="$MOONPEPE - Join the ultimate memecoin moon mission. Community-driven, meme-powered, moon-bound!">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a0033, #330066, #660099);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: #ff00ff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff00ff;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #ff00ff;
+            background: rgba(255, 0, 255, 0.2);
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff00ff, #9900cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 50px #ff00ff;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px #ff00ff;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+            to { text-shadow: 0 0 50px #ff00ff, 0 0 60px #ff00ff; }
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff00ff, #9900cc);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ff00ff;
+            border: 2px solid #ff00ff;
+        }
+
+        .btn-secondary:hover {
+            background: #ff00ff;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: #ff00ff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ff00ff;
+        }
+
+        /* Tokenomics */
+        .tokenomics {
+            padding: 100px 0;
+        }
+
+        .tokenomics h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: #ff00ff;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .token-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+        }
+
+        .token-stat h3 {
+            font-size: 2em;
+            color: #ff00ff;
+            margin-bottom: 10px;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .roadmap h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: #ff00ff;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .roadmap-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            position: relative;
+        }
+
+        .roadmap-item h3 {
+            color: #ff00ff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Social Links */
+        .social {
+            padding: 80px 0;
+        }
+
+        .social h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: #ff00ff;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff00ff, #9900cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+        }
+
+        .social-link:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 0, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(255, 0, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-image {
+                width: 200px;
+                height: 200px;
+                font-size: 100px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                margin-top: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features h2, .tokenomics h2, .roadmap h2, .social h2 {
+                font-size: 2em;
+            }
+        }
+
+        /* Contract Address Styling */
+        .contract-address {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #ff00ff;
+        }
+
+        .contract-address code {
+            color: #ff00ff;
+            font-family: monospace;
+            font-size: 1.1em;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: #ff00ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #cc00cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">$MOONPEPE</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#community">Community</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-image">🐸</div>
+                <h1>$MOONPEPE</h1>
+                <p>The Ultimate Memecoin Moon Mission</p>
+                <p>Join the most based frog on his journey to the moon! 🚀</p>
+                
+                <div class="contract-address">
+                    <p><strong>Contract Address:</strong></p>
+                    <code id="contractAddress">TBA - Coming Soon to Moonshot!</code>
+                    <button class="copy-btn" onclick="copyContract()">Copy</button>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" id="buyBtn">Buy on Moonshot 🚀</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="features">
+            <div class="container">
+                <h2>Why $MOONPEPE?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Moon Mission</h3>
+                        <p>Built for the moon, designed to fly. $MOONPEPE is ready for liftoff with the community behind it.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Driven</h3>
+                        <p>No VCs, no insiders. Just pure community power driving this rocket to the stars.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔥</div>
+                        <h3>Based & Memeable</h3>
+                        <p>The most based Pepe ready to become the ultimate meme coin. Prepare for maximum vibes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics">
+            <div class="container">
+                <h2>Tokenomics</h2>
+                <div class="tokenomics-grid">
+                    <div class="token-stat">
+                        <h3>1B</h3>
+                        <p>Total Supply</p>
+                    </div>
+                    <div class="token-stat">
+                        <h3>0%</h3>
+                        <p>Team Allocation</p>
+                    </div>
+                    <div class="token-stat">
+                        <h3>100%</h3>
+                        <p>Community Owned</p>
+                    </div>
+                    <div class="token-stat">
+                        <h3>🔥</h3>
+                        <p>LP Burned</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap">
+            <div class="container">
+                <h2>Roadmap to the Moon</h2>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item">
+                        <h3>Phase 1: Launch 🚀</h3>
+                        <p>Launch on Moonshot, build initial community, establish social presence</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h3>Phase 2: Community Building 👥</h3>
+                        <p>Grow telegram, Twitter campaigns, meme contests, influencer partnerships</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h3>Phase 3: Moon Mission 🌙</h3>
+                        <p>Major CEX listings, partnerships, $MOONPEPE NFTs, merchandise</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h3>Phase 4: Beyond the Moon 🪐</h3>
+                        <p>Utility development, DeFi integrations, become the ultimate memecoin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="social">
+            <div class="container">
+                <h2>Join the Community</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Telegram">📱</a>
+                    <a href="#" class="social-link" title="Twitter">🐦</a>
+                    <a href="#" class="social-link" title="Discord">💬</a>
+                    <a href="#" class="social-link" title="Reddit">🔴</a>
+                </div>
+                <p style="margin-top: 30px; text-align: center; opacity: 0.8;">
+                    Join thousands of fellow moon travelers on our journey to the stars!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 $MOONPEPE. All rights reserved. | Not financial advice. DYOR. | Memes to the moon! 🚀</p>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated background stars
+        function createStars() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 2 + 's';
+                bgAnimation.appendChild(star);
+            }
+        }
+
+        // Copy contract address
+        function copyContract() {
+            const contractAddress = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                alert('Contract address copied to clipboard!');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        createStars();
+
+        // Update buy button when contract is available
+        // Replace 'YOUR_CONTRACT_ADDRESS' with actual contract address when available
+        // document.getElementById('contractAddress').textContent = 'YOUR_CONTRACT_ADDRESS';
+        // document.getElementById('buyBtn').href = 'https://moonshot.money/token/YOUR_CONTRACT_ADDRESS';
+    </script>
+</body>
+</html>
